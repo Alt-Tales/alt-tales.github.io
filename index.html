@@ -2,10 +2,31 @@
 <html>
 <head>
 	<meta charset="UTF-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<style>
-		.top {top: 0px; width: 100%; position: absolute;}
-		.footer {bottom: 0px; width: 100%; position: absolute;text-align: center;}
+		body {width: 100%; overflow-x:hidden; margin: 0;}
+		.top {top: 0px; width: 100%;}
+		.footer {bottom: 0px; width: 100%; text-align: center;}
+		.content {margin: 30px;}
+		.main{border:1px solid #AAA; width: 640px; min-height: 400px; padding: 30px; margin: 0 auto;}
+		.logo{background: url('alt_tales_logo.gif');height:50px;width:200px;	 }
+		.title{font-size: 16px;}
+		.item{font-size: 14px;}
 	</style>
+	<script>
+		function readTale(json){
+			clearUI();
+			$.getJSON( "test.json", function( data ) {
+				$(".reader").html(data);
+			});
+		}
+		function clearUI(){
+			$(".home").hide();
+			$(".reader").html("LOADING...");
+			$(".reader").show();
+		}
+
+	</script>
 
 </head>
 <body>
@@ -13,20 +34,35 @@
 <!-- TOP -->
 <div class="top">
 <!-- TODO: LOGO GOES HERE, CHANGE THIS LATER -->
-<h3>Alt_Tales</h3>
+<img src="alt_tales_logo.gif"/>
 <hr/>
 <!-- Tabs/Menus for about page, creators, etc -->
 </div>
 <!-- END TOP-->
 
-<br/>
+<div class="content">
+	<div class="main">
+
+		<div class="home">
+
+			<b class="title"> Latest Release </b> 
+			<hr/>
+			<a href="#" onclick="readTale('test.json')" class="item">Test</a><br/>
+		</div>
+
+		<div class="reader" style="display:none;">
+
+		</div>
+
+	</div>
+</div>
 
 <!-- FOOTER -->
 <div class="footer">
 	<hr/>
 	<!-- TODO: Social Media Links -->
 	<em>
-		Copyright © 2017. All Rights Reserved - <a href="/about.html">Alt_Tales Game</a>
+		Copyright © 2017. All Rights Reserved - <a href="/page/about.html">Alt_Tales Game</a>
 	</em>
 </div>
 <!-- END FOOTER -->
