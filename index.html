@@ -12,20 +12,55 @@
 		.logo{background: url('alt_tales_logo.gif');height:50px;width:200px;	 }
 		.title{font-size: 16px;}
 		.item{font-size: 14px;}
+		.page.content {text-indent: 30px; text-align: justify;}
+		.page.choices {list-style:none;margin-left: 20px; margin-top: 20px;}
 	</style>
 	<script>
+		var current="0";
+		var book=null;	
 		function readTale(json){
+			loadJSON(json);
+		}
+		function loadPage(page){
 			clearUI();
-			$.getJSON( "test.json", function( data ) {
-				console.log(data);
-			});
+			if (page == "exit"){
+				exitToMain();
+			}
+
+			var currentPage = null;
+			
+			for (var i = 0; i<book.pages.length; i++){
+				if (book.pages[i].page == page){
+					currentPage = book.pages[i];
+					break;
+				}
+			}
+		
+			$(".page.title").html(book.title);
+			$(".page.content").html(currentPage.content);
+			
+			for (var i = 0; i<currentPage.opt.length; i++){
+				$(".page.choices").append("<li><a href='#' onclick='loadPage(\"" + currentPage.path[i] + "\")'>" + currentPage.opt[i] + "</a></li>");	
+			}
 		}
 		function clearUI(){
 			$(".home").hide();
-			$(".reader").html("LOADING...");
+			$(".page").html("");
 			$(".reader").show();
+			page=0;
 		}
-
+		function loadJSON(){
+			$.getJSON( "test.json", function( data ) {
+				book = data;
+				console.log(book);
+				loadPage(current);
+			});
+		}
+		function exitToMain(){
+			$(".home").show();
+			$(".page").html("");
+			$(".reader").hide();	
+		}
 	</script>
 
 </head>
@@ -51,6 +86,13 @@
 		</div>
 
 		<div class="reader" style="display:none;">
+			<b class="page title"> </b> 
+			<hr/>
+			<p class="page content">
+			</p>
+			<ul class="page choices">
+				
+			</ul>
 
 		</div>
 
