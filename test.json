@@ -1,14 +1,14 @@
 {
 	"title" : "TEST",
-	"author" : "",
-	"thumb" : "",
-	"desc" : "",
-	"date" : "",
-	"genre" : "",
-	"rating" : "",
-	"length" : "",
+	"author" : "chronodumb",
+	"thumb" : "test.thumb",
+	"desc" : "A simple test for the pathbook engine",
+	"date" : "2017-09-09",
+	"genre" : "test",
+	"rating" : "5.0",
+	"length" : "7",
 
-	"Pages" : 
+	"pages" : 
 	[
 		{
 		"page" : "0",
