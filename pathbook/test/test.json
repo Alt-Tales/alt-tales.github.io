@@ -1,0 +1,64 @@
+{
+	"title" : "TEST",
+	"author" : "chronodumb",
+	"thumb" : "test.thumb",
+	"desc" : "A simple test for the pathbook engine",
+	"date" : "2017-09-09",
+	"genre" : "test",
+	"rating" : "5.0",
+	"length" : "7",
+
+	"pages" : 
+	[
+		{
+		"page" : "0",
+		"content" : "Welcome to Alt-Tales, this is the first story published with the purpose of testing the initial phase of the pathbook game engine, one of the few game engines planned to be developed by the creators of this site for the next few months. Do you wish to know more about Alt_Tales?",
+		"opt": ["Yes, I want to know more","No I'm not interested","I'm bored, please end this"],
+		"path" : ["1","6","10"]
+		},
+		{
+		"page" : "1",
+		"content" : "On September 2017, the developer, chronodumb, had a lot of free time and got bored. He was looking for a some new project to do. Recently, he stumbled upon concepts of tabletop, and tried to be a DM, and he found out that he had a lot of fun making stories and giving options to his players that would directly change the flow of his story. Because of this, he had a sudden inspiration, to make more alternative ways for stories to be told... He asked the help from Kimcchirific, a starting freelance comic artist, to come up with a plan on they can make new ways in telling stories...  The pair of creators did some research and find the cheapest ways to publish their ideas on the internet. This gave birth to Alt_Tales, an open source website hosted for free on github pages. On September 9, they published the bare foundation of the site... With just a logo, and some text, the duo began to fill in more and more content on each update....",
+		"opt": ["I want to know more, and more","That's it? I'm not impressed"],
+		"path" : ["2","10"]
+		},
+		{
+		"page" : "2",
+		"content" : "More? Ok, they will provide more... promise~ For now, Why don't you help us test this 'PATHBOOK' engine? This is a very simple javascript engine, which just makes rendering this text and displaying the options possible.",
+		"opt": ["Ok! Sure.","Nah, I think I had enough"],
+		"path" : ["3","10"]
+		},
+		{
+		"page" : "3",
+		"content" : "Do you see the image?",
+		"opt": ["Yes","No"],
+		"path" : ["4","4"]
+		},
+		{
+		"page" : "4",
+		"content" : "Do you hear the sound?",
+		"opt": ["Yes","No"],
+		"path" : ["5","5"]
+		},
+		{
+		"page" : "5",
+		"content" : "Should we repeat the test?",
+		"opt": ["Yes","No"],
+		"path" : ["3","6"]
+		},
+		{
+		"page" : "6",
+		"content" : "Are you sure?",
+		"opt": ["Yes","No"],
+		"path" : ["10","5"]
+		},
+		{
+		"page" : "10",
+		"content" : "Thank you for participating...",
+		"opt": ["Exit To Main Menuj"],
+		"path" : ["exit"]
+		}
+
+	]
+
+}
